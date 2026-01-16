@@ -1,0 +1,182 @@
+/* Simple Charts Styles */
+
+.simple-chart {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-header h4 {
+  font-size: 18px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.legend-item::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-item.math::before { background: #4f46e5; }
+.legend-item.physics::before { background: #10b981; }
+.legend-item.cs::before { background: #f59e0b; }
+.legend-item.present::before { background: #10b981; }
+.legend-item.absent::before { background: #ef4444; }
+
+.chart-container {
+  display: flex;
+  height: 250px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.chart-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 10px;
+  border-right: 1px solid #e2e8f0;
+  width: 40px;
+}
+
+.grid-line {
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.chart-bars {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0 20px;
+}
+
+.attendance-bars {
+  align-items: flex-end;
+}
+
+.chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 40px;
+}
+
+.data-points {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+.data-point {
+  width: 10px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.data-point:hover {
+  transform: scale(1.2);
+  opacity: 0.9;
+}
+
+.math-point { background: #4f46e5; }
+.physics-point { background: #10b981; }
+.cs-point { background: #f59e0b; }
+
+.stacked-bar {
+  position: relative;
+  width: 20px;
+  height: 100%;
+  margin-bottom: 25px;
+}
+
+.bar-segment {
+  position: absolute;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bar-segment:hover {
+  opacity: 0.9;
+}
+
+.present-bar { background: #10b981; }
+.absent-bar { background: #ef4444; }
+
+.month-label,
+.week-label {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 5px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.chart-x-axis {
+  padding-left: 50px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.x-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+  
+  .chart-bars {
+    padding: 0 10px;
+  }
+  
+  .chart-column {
+    width: 30px;
+  }
+}
